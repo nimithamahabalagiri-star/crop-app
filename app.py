@@ -8,35 +8,6 @@ import io
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-st.markdown(r"""
-<style>
-    /* 1. Target custom card divs and force text to dark charcoal */
-    div[data-testid="stMetricValue"], 
-    div[data-testid="stMetricLabel"],
-    .stMetric,
-    div[style*="background"] * {
-        color: #0F172A !important;
-    }
-
-    /* 2. Fix paragraph, span, header text inside light cards */
-    div[style*="background-color"] p,
-    div[style*="background-color"] span,
-    div[style*="background-color"] h1,
-    div[style*="background-color"] h2,
-    div[style*="background-color"] h3,
-    div[style*="background-color"] div {
-        color: #0F172A !important;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-# -----------------------------------------------------------------------------
-</style>
-""", unsafe_allow_html=True)
-
-# -----------------------------------------------------------------------------
-# 1. PAGE CONFIGURATION & THEME
-# -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 # 1. PAGE CONFIGURATION & THEME
 # -----------------------------------------------------------------------------
@@ -48,9 +19,26 @@ st.set_page_config(
 )
 
 # Custom Styling for Agricultural Dashboard Theme
-# Custom Styling for Agricultural Dashboard Theme
 st.markdown(r"""
 <style>
+    /* Target custom card divs and force text to dark charcoal */
+    div[data-testid="stMetricValue"], 
+    div[data-testid="stMetricLabel"],
+    .stMetric,
+    div[style*="background"] * {
+        color: #0F172A !important;
+    }
+
+    /* Fix paragraph, span, header text inside light cards */
+    div[style*="background-color"] p,
+    div[style*="background-color"] span,
+    div[style*="background-color"] h1,
+    div[style*="background-color"] h2,
+    div[style*="background-color"] h3,
+    div[style*="background-color"] div {
+        color: #0F172A !important;
+    }
+
     .main-header {
         font-size: 2.2rem;
         font-weight: 700;
@@ -73,16 +61,11 @@ st.markdown(r"""
         box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
         text-align: center;
     }
-</style>
-""", unsafe_allow_html=True)
-    /* Force text inside metric cards to be dark & readable */
     .metric-card *, 
     div[data-testid="stMetricValue"], 
     div[data-testid="stMetricLabel"] {
         color: #0F172A !important;
     }
-</style>
-""", unsafe_allow_html=True)
     .stButton>button {
         background-color: #2e7d32; color: white; border-radius: 6px; font-weight: bold; width: 100%;
     }
