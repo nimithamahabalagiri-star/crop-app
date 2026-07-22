@@ -7,7 +7,23 @@ from datetime import date, datetime, timedelta
 import io
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
+st.markdown("""
+<style>
+    /* Fix text visibility on metric cards */
+    div[data-testid="stMetricValue"], 
+    div[data-testid="stMetricLabel"],
+    p, span, h1, h2, h3 {
+        color: #0F172A !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
+# 1. PAGE CONFIGURATION & THEME
+# -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 # 1. PAGE CONFIGURATION & THEME
 # -----------------------------------------------------------------------------
