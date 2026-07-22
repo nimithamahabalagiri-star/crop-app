@@ -72,7 +72,7 @@ def generate_agricultural_data():
         "Tomato": "Hybrid Hybrid-1", "Onion": "Red Nashik", "Cotton": "Medium Staple", "Maize": "Yellow Grade-1"
     }
 
-    dates = pd.date_range(start="2016-01-01", end=datetime.now().strftime("%Y-%m-%d"), freq="M")
+    dates = pd.date_range(start="2016-01-01", end=datetime.now().strftime("%Y-%m-%d"), freq="ME")
     
     data = []
     for d in dates:
