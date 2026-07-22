@@ -48,18 +48,32 @@ st.set_page_config(
 )
 
 # Custom Styling for Agricultural Dashboard Theme
-st.markdown("""
+st.markdown(r"""
 <style>
     .main-header {
-        font-size:2.2rem; font-weight:700; color:#1b5e20; text-align:center; padding-bottom: 5px;
+        font-size: 2.2rem; 
+        font-weight: 700; 
+        color: #1b5e20; 
+        text-align: center; 
+        padding-bottom: 5px;
     }
     .sub-header {
-        font-size:1.05rem; color:#388e3c; text-align:center; font-style:italic; margin-bottom: 20px;
+        font-size: 1.05rem; 
+        color: #388e3c; 
+        text-align: center; 
+        font-style: italic; 
+        margin-bottom: 20px;
     }
     .metric-card {
-        background-color: #f1f8e9; border-radius: 8px; padding: 12px; border-left: 5px solid #2e7d32;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;
+        background-color: #f1f8e9; 
+        border-radius: 8px; 
+        padding: 12px; 
+        border-left: 5px solid #2e7d32;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        text-align: center;
     }
+</style>
+""", unsafe_allow_html=True)
     /* Force text inside metric cards to be dark & readable */
     .metric-card *, 
     div[data-testid="stMetricValue"], 
