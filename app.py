@@ -8,7 +8,7 @@ import io
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-st.markdown("""
+st.markdown(r"""
 <style>
     /* 1. Target custom card divs and force text to dark charcoal */
     div[data-testid="stMetricValue"], 
