@@ -7,17 +7,30 @@ from datetime import date, datetime, timedelta
 import io
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 
 st.markdown("""
 <style>
-    /* Fix text visibility on metric cards */
+    /* 1. Target custom card divs and force text to dark charcoal */
     div[data-testid="stMetricValue"], 
     div[data-testid="stMetricLabel"],
-    p, span, h1, h2, h3 {
+    .stMetric,
+    div[style*="background"] * {
         color: #0F172A !important;
     }
+
+    /* 2. Fix paragraph, span, header text inside light cards */
+    div[style*="background-color"] p,
+    div[style*="background-color"] span,
+    div[style*="background-color"] h1,
+    div[style*="background-color"] h2,
+    div[style*="background-color"] h3,
+    div[style*="background-color"] div {
+        color: #0F172A !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
 </style>
 """, unsafe_allow_html=True)
 
