@@ -48,19 +48,18 @@ st.set_page_config(
 )
 
 # Custom Styling for Agricultural Dashboard Theme
+# Custom Styling for Agricultural Dashboard Theme
 st.markdown(r"""
 <style>
     .main-header {
-<style>
-    .main-header {
-        font-size: 2.2rem; 
-        font-weight: 700; 
-        color: #1b5e20; 
-        text-align: center; 
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #1b5e20;
+        text-align: center;
         padding-bottom: 5px;
     }
     .sub-header {
-        font-size: 1.05rem; 
+        font-size: 1.05rem;
         color: #388e3c; 
         text-align: center; 
         font-style: italic; 
