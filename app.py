@@ -518,3 +518,41 @@ elif portal_section == "🤖 AI Kisan Assistant":
 
 # Footer
 st.markdown('<div class="footer">© 2026 Official Government Agriculture & AI Analytics Portal. All Rights Reserved.</div>', unsafe_allow_html=True)
+import os
+import streamlit as st
+from sqlalchemy import create_engine, text
+
+# Get database connection
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+  DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+
+@st.cache_resource
+def get_db_engine():
+  return create_engine(DATABASE_URL) if DATABASE_URL else None
+
+
+engine = get_db_engine()
+
+# Inside your predict button logic:
+if engine:
+  try:
+    with engine.connect() as conn:
+      conn.execute(
+          text("""
+                  INSERT INTO prediction_logs (crop, state, market, horizon, predicted_price, confidence_score)
+                  VALUES (:crop, :state, :market, :horizon, :price, :confidence)
+              """),
+          {
+              "crop": selected_crop,
+              "state": selected_state,
+              "market": selected_market,
+              "horizon": horizon,
+              "price": float(predicted_price),
+              "confidence": 0.95,
+          },
+      )
+      conn.commit()
+  except Exception as e:
+    print(f"Database log error: {e}")
