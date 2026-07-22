@@ -60,6 +60,14 @@ st.markdown("""
         background-color: #f1f8e9; border-radius: 8px; padding: 12px; border-left: 5px solid #2e7d32;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center;
     }
+    /* Force text inside metric cards to be dark & readable */
+    .metric-card *, 
+    div[data-testid="stMetricValue"], 
+    div[data-testid="stMetricLabel"] {
+        color: #0F172A !important;
+    }
+</style>
+""", unsafe_allow_html=True)
     .stButton>button {
         background-color: #2e7d32; color: white; border-radius: 6px; font-weight: bold; width: 100%;
     }
